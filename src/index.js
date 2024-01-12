@@ -45,6 +45,39 @@ const englishJson = {
         }
 }
 
+const españolJson = {
+    "nav": {
+        "home": "Casa",
+        "player": "Mejor jugador",
+        "estadios": "Estadios",
+        "noticias": "Noticias"
+    },
+    "home": {
+        "subH": "#1 No. 1 Copa América de la FIFA 2022",
+        "titleH": "CUENTA PARA LA COPA AMÉRICA 2024",
+        "descriptionH": "La CONMEBOL Copa América 2024 se jugará en Estados Unidos e incluye 10 equipos de la CONMEBOL y 6 equipos invitados de Concacaf. En esta edición, este tradicional torneo será organizado por ambas confederaciones.",
+        "boton1H": "Comprar boleto",
+        "boton2H": "Leer más"
+    },
+    "estadios": {
+        "titleE": "Estadios sede de la Copa América",
+        "subtitleE": "EL ÚLTIMO PAQUETE PARA LA COPA MUNDIAL",
+        "descriptionE": "Reserva tu entrada de hospitalidad y vive Estados Unidos 2024 con estilo",
+        "botonE": "Saber más"
+    },
+    "player": {
+        "titleBP": "MEJOR JUGADORA ACTUAL DE LA COPA",
+        "sub1BP": "Avg. Clasificación",
+        "sub2BP": "Gols",
+        "sub3BP": "Asistir",
+        "botonBP": "Evaluación completa"
+    },
+    "contactanos": {
+            "titleC": "¿TIENES ALGUNA DUDA SOBRE LA COPA AMERICANA POR FAVOR ENVÍA UN MENSAJE AQUÍ?",
+            "botonC": "ENVIAR AHORA"
+    }
+}
+
 
 // Multi Idiomas
 
@@ -55,38 +88,38 @@ botonIdioma.addEventListener('click', () => {
         isEnglish = !isEnglish;
 
         if (isEnglish) {
-            updateContent();
+            updateContent(englishJson);
         } else {
-            location.reload();
+            updateContent(españolJson);
         }
 })
 
 
-const updateContent = () =>{
+const updateContent = (idioma) =>{
         //Nav
-        document.getElementById("home").textContent = englishJson.nav.home;
-        document.getElementById("player").textContent = englishJson.nav.player;
-        document.getElementById("estadios").textContent = englishJson.nav.estadios;
-        document.getElementById("noticias").textContent = englishJson.nav.noticias;
+        document.getElementById("home").textContent = idioma.nav.home;
+        document.getElementById("player").textContent = idioma.nav.player;
+        document.getElementById("estadios").textContent = idioma.nav.estadios;
+        document.getElementById("noticias").textContent = idioma.nav.noticias;
         //Home
-        document.getElementById("subH").textContent = englishJson.home.subH;
-        document.getElementById("titleH").textContent = englishJson.home.titleH;
-        document.getElementById("descriptionH").textContent = englishJson.home.descriptionH;
-        document.getElementById("boton1H").textContent = englishJson.home.boton1H;
-        document.getElementById("boton2H").textContent = englishJson.home.boton2H;
+        document.getElementById("subH").textContent = idioma.home.subH;
+        document.getElementById("titleH").textContent = idioma.home.titleH;
+        document.getElementById("descriptionH").textContent = idioma.home.descriptionH;
+        document.getElementById("boton1H").textContent = idioma.home.boton1H;
+        document.getElementById("boton2H").textContent = idioma.home.boton2H;
         //ESTADIOS
-        document.getElementById("titleE").textContent = englishJson.estadios.titleE;
-        document.getElementById("subtitleE").textContent = englishJson.estadios.subtitleE;
-        document.getElementById("descriptionE").textContent = englishJson.estadios.descriptionE;
-        document.getElementById("botonE").textContent = englishJson.estadios.botonE;
+        document.getElementById("titleE").textContent = idioma.estadios.titleE;
+        document.getElementById("subtitleE").textContent = idioma.estadios.subtitleE;
+        document.getElementById("descriptionE").textContent = idioma.estadios.descriptionE;
+        document.getElementById("botonE").textContent = idioma.estadios.botonE;
         //PLAYER
-        document.getElementById("titleBP").textContent = englishJson.player.titleBP;
-        document.getElementById("sub1BP").textContent = englishJson.player.sub1BP;
-        document.getElementById("sub2BP").textContent = englishJson.player.sub2BP;
-        document.getElementById("sub3BP").textContent = englishJson.player.sub3BP;
-        document.getElementById("botonBP").textContent = englishJson.player.botonBP;
+        document.getElementById("titleBP").textContent = idioma.player.titleBP;
+        document.getElementById("sub1BP").textContent = idioma.player.sub1BP;
+        document.getElementById("sub2BP").textContent = idioma.player.sub2BP;
+        document.getElementById("sub3BP").textContent = idioma.player.sub3BP;
+        document.getElementById("botonBP").textContent = idioma.player.botonBP;
         //CONTACTANOS
-        document.getElementById("titleC").textContent = englishJson.contactanos.titleC;
-        document.getElementById("botonC").textContent = englishJson.contactanos.botonC;
+        document.getElementById("titleC").textContent = idioma.contactanos.titleC;
+        document.getElementById("botonC").textContent = idioma.contactanos.botonC;
         
 }
